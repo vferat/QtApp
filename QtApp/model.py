@@ -56,6 +56,9 @@ class Model:
         self.restingstate_data = None
         self.ica = None
         self.modK = None
+        # Score
+        self.min_score = None
+        self.max_score = None
 
     @data_changed
     def get_available_streams(self):
@@ -120,5 +123,9 @@ class Model:
     def run_kmeans(self):
         thread = threading.Thread(name='restingstate', target=self.make_kmeans, daemon=True)
         thread.start()
+        
+    @data_changed
+    def make_score():
+        
 
 
